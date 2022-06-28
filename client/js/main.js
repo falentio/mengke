@@ -6,6 +6,6 @@ const [
 	url,
 ] = Deno.args
 
-new Mengke(secret, algorithm, baseUrl)
+new Mengke(secret, baseUrl)
 	.create(url)
 	.then(console.log)
