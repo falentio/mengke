@@ -6,7 +6,6 @@ import { mustGetEnv, Hmac } from "./utils.ts";
 
 const hmac = new Hmac(
 	mustGetEnv("HMAC_SECRETS"),
-	mustGetEnv("HMAC_ALGORITHM"),
 );
 const shortener = new Shortener(
 	mustGetEnv("DETABASE_PROJECT_ID"),
