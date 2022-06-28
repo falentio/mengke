@@ -1,0 +1,9 @@
+{
+	"imports": {
+		"std/": "https://deno.land/std@0.145.0/",
+		"oak": "https://deno.land/x/oak@v10.6.0/mod.ts",
+		"quick-lru": "https://cdn.skypack.dev/quick-lru@6?dts",
+		"deta": "https://cdn.jsdelivr.net/gh/falentio/deta@v0.1.2/mod.ts",
+		"superstruct": "https://cdn.skypack.dev/superstruct@v0.16.0?dts"
+	}
+}

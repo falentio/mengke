@@ -1,0 +1,25 @@
+{
+	"importMap": "importMap.json",
+	"fmt": {
+		"files": {
+			"include": ["src"]
+		},
+		"options": {
+			"useTabs": true,
+			"indentWidth": 4,
+			"singleQuote": false
+		}
+	},
+	"lint": {
+		"files": {
+			"include": ["src"]
+		},
+		"rules": {
+			"tags": ["recommended"]
+		}
+	},
+	"tasks": {
+		"dev": "deno run -A --watch src/server.ts",
+		"check": "deno check src/server.ts"
+	}
+}
