@@ -2,7 +2,6 @@ import { Mengke } from "./index.js"
 
 const [
 	secret,
-	algorithm,
 	baseUrl,
 	url,
 ] = Deno.args

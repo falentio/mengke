@@ -39,7 +39,7 @@ export class Mengke {
 		})
 
 		if (!res.ok) {
-			throw new Error(`${res.status} status code received`)
+			throw new Error(`${res.status} status code received, msg: ${await res.text()}`)
 		}
 
 		return res
