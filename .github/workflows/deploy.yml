@@ -17,4 +17,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "mengke"
+          import-map: "./importMap.json"
           entrypoint: "./src/server.ts"
