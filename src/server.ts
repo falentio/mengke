@@ -2,10 +2,11 @@ import "std/dotenv/load.ts";
 import { Application, Router, Status } from "oak";
 import * as s from "superstruct";
 import { Shortener } from "./shortener.ts";
-import { mustGetEnv, Hmac } from "./utils.ts";
+import { mustGetEnv, Hmac, getPrefixedEnv } from "./utils.ts";
 
+const hmacSecretsPrefix = Deno.env.get("HMAC_ENV_PREFIX") ?? "$_"
 const hmac = new Hmac(
-	mustGetEnv("HMAC_SECRETS"),
+	getPrefixedEnv(hmacSecretsPrefix),
 );
 const shortener = new Shortener(
 	mustGetEnv("DETABASE_PROJECT_ID"),

@@ -1,5 +1,16 @@
 const encoder = new TextEncoder();
 
+export function getPrefixedEnv(prefix: string): string[] {
+	const result: string[] = []
+	const env = Deno.env.toObject()
+	for (const [k, v] of Object.entries(env)) {
+		if (k.startsWith(prefix)) {
+			result.push(v)
+		}
+	}
+	return result
+}
+
 export function mustGetEnv(name: string): string {
 	const e = Deno.env.get(name);
 	if (e) {
@@ -10,8 +21,8 @@ export function mustGetEnv(name: string): string {
 
 export class Hmac {
 	#keys: Promise<CryptoKey>[] = [];
-	constructor(secrets: string) {
-		for (const secret of secrets.split(",")) {
+	constructor(secrets: string[]) {
+		for (const secret of secrets) {
 			const key = crypto.subtle.importKey(
 				"raw",
 				encoder.encode(secret),
